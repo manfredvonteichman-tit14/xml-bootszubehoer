@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<boot typ=""
-      besitzer=""
-      liegeplatz=""
-      tiefgang=""
+<boot typ="Segelboot"
+      name="Flash"
+      hersteller="Axion Boats"
+      modell="AXion33.5"
+      besitzer="Tante Emma"
+      tiefgang="185cm"
       ausruestung=""
-      fuehrerschein="">
+      fuehrerschein="Bodenseeschifferpatent">
+  
+  <liegeplatz>
+  	<hafen strasse="Seestrasse" hsnr="1" plz="12345" />
+  	<platz nummer="2a" />
+  </liegeplatz>
+  
   <ersatzteile>
     
   </ersatzteile>
