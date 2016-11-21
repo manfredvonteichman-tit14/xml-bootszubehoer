@@ -1,1 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:element name="bootszubehoer">
+    <xsd:annotation>
+      <xsd:documentation>
+          Dies ist die XSD Datei der XML Bootszubehör Modellierung.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

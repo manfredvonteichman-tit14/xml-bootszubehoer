@@ -1,1 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<boot typ=""
+      besitzer=""
+      liegeplatz=""
+      tiefgang=""
+      ausruestung=""
+      fuehrerschein="">
+  <ersatzteile>
+    
+  </ersatzteile>
+
+  <zubehoerteile>
+
+  </zubehoerteile>
+</boot>
