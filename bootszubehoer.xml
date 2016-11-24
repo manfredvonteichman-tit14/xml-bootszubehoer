@@ -7,13 +7,19 @@
       ausruestung=""
       fuehrerschein="Bodenseeschifferpatent">
   
-  <besitzer name="Emma" vorname="Tante" str="Lange Strasse" hsnr="1">
+  <besitzer name="Emma" 
+  			vorname="Tante" 
+  			strasse="Lange Strasse" 
+  			hsnr="1" 
+  			plz="12345">
     <lizenz name="Signalpistolenführerscheinspatent" />
     <lizenz name="Bodenseeschifferpatent" />
   </besitzer>
   
   <liegeplatz>
-  	<hafen strasse="Seestrasse" hsnr="1" plz="12345" />
+  	<hafen  strasse="Seestrasse" 
+  			hsnr="1" 
+  			plz="12345" />
   	<platz nummer="2a" />
   </liegeplatz>
   
