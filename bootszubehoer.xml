@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<boot bootstyp="Segelboot"
+
+<boot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="bootszubehoer.xsd"
+	  bootstyp="Segelboot"
       name="Flash"
       hersteller="Axion Boats"
       modell="AXion33.5"
@@ -11,9 +14,9 @@
 			vorname="Tante">
     <adresse>
       <strasse>Lange Strasse</strasse>
-      <hausnummer>1</hausnummer>
+      <hausnummer>13/2</hausnummer>
       <stadt>Friedrichshafen</stadt>
-      <postleitzahl>88045</postleitzahl>
+      <postleitzahl>88046</postleitzahl>
     </adresse>
     <lizenz>Signalpistolenführerscheinspatent</lizenz>
     <lizenz>Bodenseeschifferpatent</lizenz>

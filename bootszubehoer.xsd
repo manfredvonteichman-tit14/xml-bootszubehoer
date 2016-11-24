@@ -9,17 +9,29 @@
   </xs:annotation>
 
   <xs:element name="strasse" type="xs:string"/>
-  <xs:element name="hausnummer" type="xs:byte"/>
+  <xs:element name="hausnummer">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]*/?[0-9]*[a-z]?" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
   <xs:element name="stadt" type="xs:string"/>
-  <xs:element name="postleitzahl" type="xs:int"/>
+  <xs:element name="postleitzahl">
+    <xs:simpleType>
+	  <xs:restriction base="xs:int">
+	    <xs:pattern value="[0-9]{5}"/>
+	  </xs:restriction>  
+    </xs:simpleType>
+  </xs:element>
   
   <xs:element name="adresse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="strasse"/>
-        <xs:element ref="hausnummer"/>
-        <xs:element ref="stadt"/>
-        <xs:element ref="postleitzahl"/>
+        <xs:element ref="strasse" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="hausnummer" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="stadt" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="postleitzahl" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -29,30 +41,34 @@
   <xs:element name="hafen">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="adresse"/>
-        <xs:element ref="platz"/>
+        <xs:element ref="adresse" maxOccurs="1"/>
+        <xs:element ref="platz" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   
   <xs:element name="vorraussetzung">
     <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute type="xs:string" name="typ" use="optional"/>
-          <xs:attribute type="xs:string" name="name" use="optional"/>
-        </xs:extension>
-      </xs:simpleContent>
+      <xs:attribute name="typ">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="lizenz"/>
+            <xs:enumeration value="bootstyp"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      
+      <xs:attribute type="xs:string" name="name"/>
     </xs:complexType>
   </xs:element>
   
   <xs:element name="ersatzteil">
-    <xs:complexType mixed="true">
+    <xs:complexType>
       <xs:sequence>
-        <xs:element ref="vorraussetzung" minOccurs="0"/>
+        <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
-      <xs:attribute type="xs:string" name="name" use="optional"/>
-      <xs:attribute type="xs:short" name="preis" use="optional"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:short" name="preis"/>
     </xs:complexType>
   </xs:element>
   
@@ -61,8 +77,8 @@
       <xs:sequence>
         <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
-      <xs:attribute type="xs:string" name="name" use="optional"/>
-      <xs:attribute type="xs:short" name="preis" use="optional"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:short" name="preis"/>
     </xs:complexType>
   </xs:element>
   
@@ -106,10 +122,10 @@
   <xs:element name="boot">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="besitzer"/>
-        <xs:element ref="liegeplatz"/>
-        <xs:element ref="ersatzteile"/>
-        <xs:element ref="zubehoerteile"/>
+        <xs:element ref="besitzer" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="liegeplatz" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="ersatzteile" maxOccurs="unbounded"/>
+        <xs:element ref="zubehoerteile" maxOccurs="unbounded"/>
       </xs:sequence>
       <xs:attribute type="xs:string" name="bootstyp"/>
       <xs:attribute type="xs:string" name="name"/>
