@@ -7,36 +7,31 @@
         Dies ist die XSD Datei der XML Bootszubehoer Modellierung.
     </xs:documentation>
   </xs:annotation>
+
+  <xs:element name="strasse" type="xs:string"/>
+  <xs:element name="hausnummer" type="xs:byte"/>
+  <xs:element name="stadt" type="xs:string"/>
+  <xs:element name="postleitzahl" type="xs:int"/>
   
-  <xs:element name="lizenz">
+  <xs:element name="adresse">
     <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute type="xs:string" name="name" use="optional"/>
-        </xs:extension>
-      </xs:simpleContent>
+      <xs:sequence>
+        <xs:element ref="strasse"/>
+        <xs:element ref="hausnummer"/>
+        <xs:element ref="stadt"/>
+        <xs:element ref="postleitzahl"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
+  <xs:element name="platz" type="xs:string"/>
   
   <xs:element name="hafen">
     <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute type="xs:string" name="strasse"/>
-          <xs:attribute type="xs:byte" name="hsnr"/>
-          <xs:attribute type="xs:short" name="plz"/>
-        </xs:extension>
-      </xs:simpleContent>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="platz">
-    <xs:complexType>
-      <xs:simpleContent>
-        <xs:extension base="xs:string">
-          <xs:attribute type="xs:string" name="nummer"/>
-        </xs:extension>
-      </xs:simpleContent>
+      <xs:sequence>
+        <xs:element ref="adresse"/>
+        <xs:element ref="platz"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   
@@ -56,7 +51,6 @@
       <xs:sequence>
         <xs:element ref="vorraussetzung" minOccurs="0"/>
       </xs:sequence>
-      <xs:attribute type="xs:byte" name="id" use="optional"/>
       <xs:attribute type="xs:string" name="name" use="optional"/>
       <xs:attribute type="xs:short" name="preis" use="optional"/>
     </xs:complexType>
@@ -67,22 +61,21 @@
       <xs:sequence>
         <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
-      <xs:attribute type="xs:byte" name="id" use="optional"/>
       <xs:attribute type="xs:string" name="name" use="optional"/>
       <xs:attribute type="xs:short" name="preis" use="optional"/>
     </xs:complexType>
   </xs:element>
   
+  <xs:element name="lizenz" type="xs:string"/>
+
   <xs:element name="besitzer">
     <xs:complexType>
       <xs:sequence>
+        <xs:element ref="adresse"/>
         <xs:element ref="lizenz" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute type="xs:string" name="name"/>
       <xs:attribute type="xs:string" name="vorname"/>
-      <xs:attribute type="xs:string" name="strasse"/>
-      <xs:attribute type="xs:byte" name="hsnr"/>
-      <xs:attribute type="xs:short" name="plz"/>
     </xs:complexType>
   </xs:element>
   
@@ -90,7 +83,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="hafen"/>
-        <xs:element ref="platz"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -128,5 +120,4 @@
       <xs:attribute type="xs:string" name="fuehrerschein"/>
     </xs:complexType>
   </xs:element>
-
 </xs:schema>
