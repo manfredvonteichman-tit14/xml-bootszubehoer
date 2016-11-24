@@ -6,46 +6,53 @@
       tiefgang="185cm"
       ausruestung=""
       fuehrerschein="Bodenseeschifferpatent">
-  
-  <besitzer name="Emma" 
-  			vorname="Tante" 
-  			strasse="Lange Strasse" 
-  			hsnr="1" 
-  			plz="12345">
+
+  <besitzer name="Emma"
+  			    vorname="Tante">
+    <adresse>
+      <strasse>Lange Strasse</strasse>
+      <hausnummer>1</hausnummer>
+      <stadt>Friedrichshafen</stadt>
+      <postleitzahl>88045</postleitzahl>
+    </adresse>
     <lizenz>Signalpistolenführerscheinspatent</lizenz>
     <lizenz>Bodenseeschifferpatent</lizenz>
   </besitzer>
-  
+
   <liegeplatz>
-  	<hafen  strasse="Seestrasse" 
-  			hsnr="1" 
-  			plz="12345" />
-  	<platz>2a</platz>
+  	<hafen>
+      <adresse>
+        <strasse>Kurze Strasse</strasse>
+        <hausnummer>2</hausnummer>
+        <stadt>Friedrichshafen</stadt>
+        <postleitzahl>88045</postleitzahl>
+      </adresse>
+  	   <platz>2a</platz>
   </liegeplatz>
-  
+
   <ersatzteile>
-    <ersatzteil id="0"
-    			name="Ruder"
-    			preis="199">
+    <ersatzteil name="Ruder"
+    			      preis="199">
     </ersatzteil>
-    <ersatzteil id="0"
-    			name="Mast"
-    			preis="899">
-      <vorraussetzung typ="bootstyp" name="Segelboot" />
+    <ersatzteil name="Mast"
+    			      preis="899">
+      <vorraussetzung typ="bootstyp"
+                      name="Segelboot" />
     </ersatzteil>
   </ersatzteile>
 
   <zubehoerteile>
-    <zubehoerteil id="0"
-    			  name="Signalpistole"
-    			  preis="30">
-      <vorraussetzung typ="lizenz" name="Signalpistolenführerscheinspatent" />
+    <zubehoerteil name="Signalpistole"
+    			        preis="30">
+      <vorraussetzung typ="lizenz"
+                      name="Signalpistolenführerscheinspatent" />
     </zubehoerteil>
-    <zubehoerteil id="0"
-    			  name="Hilfsmotor"
-    			  preis="180">
-      <vorraussetzung typ="lizenz" name="Bodenseeschifferpatent" />
-      <vorraussetzung typ="bootstyp" name="Segelboot" />
+    <zubehoerteil name="Hilfsmotor"
+    			        preis="180">
+      <vorraussetzung typ="lizenz"
+                      name="Bodenseeschifferpatent" />
+      <vorraussetzung typ="bootstyp"
+                      name="Segelboot" />
     </zubehoerteil>
   </zubehoerteile>
 </boot>
