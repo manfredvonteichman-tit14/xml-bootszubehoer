@@ -12,15 +12,15 @@
   			strasse="Lange Strasse" 
   			hsnr="1" 
   			plz="12345">
-    <lizenz name="Signalpistolenführerscheinspatent" />
-    <lizenz name="Bodenseeschifferpatent" />
+    <lizenz>Signalpistolenführerscheinspatent</lizenz>
+    <lizenz>Bodenseeschifferpatent</lizenz>
   </besitzer>
   
   <liegeplatz>
   	<hafen  strasse="Seestrasse" 
   			hsnr="1" 
   			plz="12345" />
-  	<platz nummer="2a" />
+  	<platz>2a</platz>
   </liegeplatz>
   
   <ersatzteile>
