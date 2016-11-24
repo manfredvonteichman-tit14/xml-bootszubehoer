@@ -68,7 +68,7 @@
         <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute type="xs:string" name="name"/>
-      <xs:attribute type="xs:short" name="preis"/>
+      <xs:attribute type="xs:int" name="preis"/>
     </xs:complexType>
   </xs:element>
   
@@ -78,7 +78,7 @@
         <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute type="xs:string" name="name"/>
-      <xs:attribute type="xs:short" name="preis"/>
+      <xs:attribute type="xs:int" name="preis"/>
     </xs:complexType>
   </xs:element>
   
@@ -87,7 +87,7 @@
   <xs:element name="besitzer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="adresse"/>
+        <xs:element ref="adresse" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="lizenz" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute type="xs:string" name="name"/>
@@ -98,7 +98,7 @@
   <xs:element name="liegeplatz">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="hafen"/>
+        <xs:element ref="hafen" maxOccurs="1" minOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -124,10 +124,17 @@
       <xs:sequence>
         <xs:element ref="besitzer" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="liegeplatz" minOccurs="0" maxOccurs="1"/>
-        <xs:element ref="ersatzteile" maxOccurs="unbounded"/>
-        <xs:element ref="zubehoerteile" maxOccurs="unbounded"/>
+        <xs:element ref="ersatzteile" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="zubehoerteile" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
-      <xs:attribute type="xs:string" name="bootstyp"/>
+      <xs:attribute name="bootstyp">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Segelboot"/>
+            <xs:enumeration value="Motorboot"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
       <xs:attribute type="xs:string" name="name"/>
       <xs:attribute type="xs:string" name="hersteller"/>
       <xs:attribute type="xs:string" name="modell"/>
