@@ -1,10 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
-  <xsd:element name="bootszubehoer">
-    <xsd:annotation>
-      <xsd:documentation>
-          Dies ist die XSD Datei der XML Bootszubehör Modellierung.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
-</xsd:schema>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>
+        Dies ist die XSD Datei der XML Bootszubehoer Modellierung.
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:element name="lizenz">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="name" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="hafen">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="strasse"/>
+          <xs:attribute type="xs:byte" name="hsnr"/>
+          <xs:attribute type="xs:short" name="plz"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="platz">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="nummer"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="vorraussetzung">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="typ" use="optional"/>
+          <xs:attribute type="xs:string" name="name" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ersatzteil">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="vorraussetzung" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+      <xs:attribute type="xs:string" name="name" use="optional"/>
+      <xs:attribute type="xs:short" name="preis" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="zubehoerteil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+      <xs:attribute type="xs:string" name="name" use="optional"/>
+      <xs:attribute type="xs:short" name="preis" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="besitzer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="lizenz" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="vorname"/>
+      <xs:attribute type="xs:string" name="strasse"/>
+      <xs:attribute type="xs:byte" name="hsnr"/>
+      <xs:attribute type="xs:short" name="plz"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="liegeplatz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hafen"/>
+        <xs:element ref="platz"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ersatzteile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ersatzteil" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="zubehoerteile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="zubehoerteil" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="boot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="besitzer"/>
+        <xs:element ref="liegeplatz"/>
+        <xs:element ref="ersatzteile"/>
+        <xs:element ref="zubehoerteile"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="bootstyp"/>
+      <xs:attribute type="xs:string" name="name"/>
+      <xs:attribute type="xs:string" name="hersteller"/>
+      <xs:attribute type="xs:string" name="modell"/>
+      <xs:attribute type="xs:string" name="tiefgang"/>
+      <xs:attribute type="xs:string" name="ausruestung"/>
+      <xs:attribute type="xs:string" name="fuehrerschein"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
