@@ -8,8 +8,8 @@
       fuehrerschein="Bodenseeschifferpatent">
   
   <besitzer name="Emma" vorname="Tante" str="Lange Strasse" hsnr="1">
-    <lizenz name="Signalpistolenführerscheinspatent"/>
-    <lizenz name="Bodenseeschifferpatent"/>
+    <lizenz name="Signalpistolenführerscheinspatent" />
+    <lizenz name="Bodenseeschifferpatent" />
   </besitzer>
   
   <liegeplatz>
@@ -21,20 +21,25 @@
     <ersatzteil id="0"
     			name="Ruder"
     			preis="199">
-      <vorraussetzung typ="" name=""/>
     </ersatzteil>
     <ersatzteil id="0"
     			name="Mast"
-    			preis="199">
-      <vorraussetzung typ="bootstyp" name="Segelboot"/>
+    			preis="899">
+      <vorraussetzung typ="bootstyp" name="Segelboot" />
     </ersatzteil>
   </ersatzteile>
 
   <zubehoerteile>
-    <ersatzteil id="0"
-    			name="Signalpistole"
-    			preis="199">
-      <vorraussetzung typ="lizenz" name="Signalpistolenführerscheinspatent"/>
-    </ersatzteil>
+    <zubehoerteil id="0"
+    			  name="Signalpistole"
+    			  preis="30">
+      <vorraussetzung typ="lizenz" name="Signalpistolenführerscheinspatent" />
+    </zubehoerteil>
+    <zubehoerteil id="0"
+    			  name="Hilfsmotor"
+    			  preis="180">
+      <vorraussetzung typ="lizenz" name="Bodenseeschifferpatent" />
+      <vorraussetzung typ="bootstyp" name="Segelboot" />
+    </zubehoerteil>
   </zubehoerteile>
 </boot>
