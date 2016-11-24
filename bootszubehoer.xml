@@ -8,16 +8,29 @@
       ausruestung=""
       fuehrerschein="Bodenseeschifferpatent">
   
+  <besitzer name="Emma" vorname="Tante" str="Lange Strasse" hsnr="1">
+    <lizenz name="Signalpistolenführerscheinspatent"/>
+    <lizenz name="Bodenseeschifferpatent"/>
+  </besitzer>
+  
   <liegeplatz>
   	<hafen strasse="Seestrasse" hsnr="1" plz="12345" />
   	<platz nummer="2a" />
   </liegeplatz>
   
   <ersatzteile>
-    
+    <ersatzteil id="0"
+    			name="Ruder"
+    			preis="199">
+      <vorraussetzung name=""/>
+    </ersatzteil>
   </ersatzteile>
 
   <zubehoerteile>
-
+    <ersatzteil id="0"
+    			name="Signalpistole"
+    			preis="199">
+      <vorraussetzung name="Signalpistolenführerscheinspatent"/>
+    </ersatzteil>
   </zubehoerteile>
 </boot>
