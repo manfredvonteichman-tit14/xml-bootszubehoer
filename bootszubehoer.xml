@@ -8,7 +8,7 @@
       fuehrerschein="Bodenseeschifferpatent">
 
   <besitzer name="Emma"
-  			    vorname="Tante">
+			vorname="Tante">
     <adresse>
       <strasse>Lange Strasse</strasse>
       <hausnummer>1</hausnummer>
@@ -27,29 +27,29 @@
         <stadt>Friedrichshafen</stadt>
         <postleitzahl>88045</postleitzahl>
       </adresse>
-  	   <platz>2a</platz>
+  	  <platz>2a</platz>
      </hafen>
   </liegeplatz>
 
   <ersatzteile>
     <ersatzteil name="Ruder"
-    			      preis="199">
+    			preis="199">
     </ersatzteil>
     <ersatzteil name="Mast"
-    			      preis="899">
+    			preis="899">
       <vorraussetzung typ="bootstyp"
-                      name="Segelboot" />
+                	  name="Segelboot" />
     </ersatzteil>
   </ersatzteile>
 
   <zubehoerteile>
     <zubehoerteil name="Signalpistole"
-    			        preis="30">
+				  preis="30">
       <vorraussetzung typ="lizenz"
                       name="Signalpistolenführerscheinspatent" />
     </zubehoerteil>
     <zubehoerteil name="Hilfsmotor"
-    			        preis="180">
+				  preis="180">
       <vorraussetzung typ="lizenz"
                       name="Bodenseeschifferpatent" />
       <vorraussetzung typ="bootstyp"
