@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<boot typ="Segelboot"
+<boot bootstyp="Segelboot"
       name="Flash"
       hersteller="Axion Boats"
       modell="AXion33.5"
-      besitzer="Tante Emma"
       tiefgang="185cm"
       ausruestung=""
       fuehrerschein="Bodenseeschifferpatent">
@@ -22,7 +21,12 @@
     <ersatzteil id="0"
     			name="Ruder"
     			preis="199">
-      <vorraussetzung name=""/>
+      <vorraussetzung typ="" name=""/>
+    </ersatzteil>
+    <ersatzteil id="0"
+    			name="Mast"
+    			preis="199">
+      <vorraussetzung typ="bootstyp" name="Segelboot"/>
     </ersatzteil>
   </ersatzteile>
 
@@ -30,7 +34,7 @@
     <ersatzteil id="0"
     			name="Signalpistole"
     			preis="199">
-      <vorraussetzung name="Signalpistolenführerscheinspatent"/>
+      <vorraussetzung typ="lizenz" name="Signalpistolenführerscheinspatent"/>
     </ersatzteil>
   </zubehoerteile>
 </boot>
