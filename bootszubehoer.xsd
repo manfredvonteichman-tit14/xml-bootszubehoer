@@ -21,10 +21,10 @@
     <xs:simpleType>
 	  <xs:restriction base="xs:int">
 	    <xs:pattern value="[0-9]{5}"/>
-	  </xs:restriction>  
+	  </xs:restriction>
     </xs:simpleType>
   </xs:element>
-  
+
   <xs:element name="adresse">
     <xs:complexType>
       <xs:sequence>
@@ -35,9 +35,9 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="platz" type="xs:string"/>
-  
+
   <xs:element name="hafen">
     <xs:complexType>
       <xs:sequence>
@@ -46,8 +46,8 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
-  <xs:element name="vorraussetzung">
+
+  <xs:element name="voraussetzung">
     <xs:complexType>
       <xs:attribute name="typ">
         <xs:simpleType>
@@ -57,31 +57,31 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
-      
+
       <xs:attribute type="xs:string" name="name"/>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="ersatzteil">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="voraussetzung" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute type="xs:string" name="name"/>
       <xs:attribute type="xs:int" name="preis"/>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="zubehoerteil">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="vorraussetzung" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="voraussetzung" maxOccurs="unbounded" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute type="xs:string" name="name"/>
       <xs:attribute type="xs:int" name="preis"/>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="lizenz" type="xs:string"/>
 
   <xs:element name="besitzer">
@@ -94,7 +94,7 @@
       <xs:attribute type="xs:string" name="vorname"/>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="liegeplatz">
     <xs:complexType>
       <xs:sequence>
@@ -102,7 +102,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="ersatzteile">
     <xs:complexType>
       <xs:sequence>
@@ -110,7 +110,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="zubehoerteile">
     <xs:complexType>
       <xs:sequence>
@@ -118,7 +118,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="boot">
     <xs:complexType>
       <xs:sequence>

@@ -41,7 +41,7 @@
     </ersatzteil>
     <ersatzteil name="Mast"
     			preis="899">
-      <vorraussetzung typ="bootstyp"
+      <voraussetzung typ="bootstyp"
                 	  name="Segelboot" />
     </ersatzteil>
   </ersatzteile>
@@ -49,14 +49,14 @@
   <zubehoerteile>
     <zubehoerteil name="Signalpistole"
 				  preis="30">
-      <vorraussetzung typ="lizenz"
+      <voraussetzung typ="lizenz"
                       name="Signalpistolenführerscheinspatent" />
     </zubehoerteil>
     <zubehoerteil name="Hilfsmotor"
 				  preis="180">
-      <vorraussetzung typ="lizenz"
+      <voraussetzung typ="lizenz"
                       name="Bodenseeschifferpatent" />
-      <vorraussetzung typ="bootstyp"
+      <voraussetzung typ="bootstyp"
                       name="Segelboot" />
     </zubehoerteil>
   </zubehoerteile>
