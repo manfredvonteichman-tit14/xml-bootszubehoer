@@ -3,7 +3,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <xsl:output method="html" indent="yes"/>
-<xsl:template match="/boot">
+<xsl:template match="/">
 
 <html>
 <head>
@@ -25,15 +25,15 @@
        </tr>
        <tr>
            <td>Bootstyp</td>
-           <td></td>
+           <td><xsl:value-of select="boot/@bootstyp"/></td>
        </tr>
        <tr>
            <td>Hersteller</td>
-           <td></td>
+           <td><xsl:value-of select="boot/@hersteller"/></td>
        </tr>
        <tr>
            <td>Modell</td>
-           <td></td>
+           <td><xsl:value-of select="boot/@modell"/></td>
        </tr>
        <tr>
            <td>Besitzer</td>
@@ -41,11 +41,11 @@
        </tr>
        <tr>
            <td>Tiefgang</td>
-           <td></td>
+           <td><xsl:value-of select="boot/@tiefgang"/></td>
        </tr>
        <tr>
            <td>Fuehrerschein</td>
-           <td></td>
+           <td><xsl:value-of select="boot/@fuehrerschein"/></td>
        </tr>
    </table>
    <table border="1" width="768 px">
