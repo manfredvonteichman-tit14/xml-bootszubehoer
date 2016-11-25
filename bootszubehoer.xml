@@ -37,8 +37,7 @@
 
   <ersatzteile>
     <ersatzteil name="Ruder"
-    			preis="199">
-    </ersatzteil>
+    			preis="199"/>
     <ersatzteil name="Mast"
     			preis="899">
       <voraussetzung typ="bootstyp"
@@ -52,6 +51,8 @@
       <voraussetzung typ="lizenz"
                       name="Signalpistolenführerscheinspatent" />
     </zubehoerteil>
+    <zubehoerteil name="Rettungsweste"
+				  preis="120"/>
     <zubehoerteil name="Hilfsmotor"
 				  preis="180">
       <voraussetzung typ="lizenz"

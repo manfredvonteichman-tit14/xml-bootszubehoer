@@ -3,7 +3,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <xsl:output method="html" indent="yes"/>
-<xsl:template match="/">
+<xsl:template match="/boot">
 
 <html>
 <head>
@@ -15,75 +15,146 @@
        <h1>Bootszubehoer</h1>
    </header>
 
-   <table border="1" width="768 px">
+   <table border="1" width="816 px">
        <tr>
            <th colspan="2">Grunddaten</th>
        </tr>
        <tr>
            <td width="125 px">Name</td>
-           <td><xsl:value-of select="boot/@name"/></td>
+           <td><xsl:value-of select="@name"/></td>
        </tr>
        <tr>
            <td>Bootstyp</td>
-           <td><xsl:value-of select="boot/@bootstyp"/></td>
+           <td><xsl:value-of select="@bootstyp"/></td>
        </tr>
        <tr>
            <td>Hersteller</td>
-           <td><xsl:value-of select="boot/@hersteller"/></td>
+           <td><xsl:value-of select="@hersteller"/></td>
        </tr>
        <tr>
            <td>Modell</td>
-           <td><xsl:value-of select="boot/@modell"/></td>
-       </tr>
-       <tr>
-           <td>Besitzer</td>
-           <td></td>
+           <td><xsl:value-of select="@modell"/></td>
        </tr>
        <tr>
            <td>Tiefgang</td>
-           <td><xsl:value-of select="boot/@tiefgang"/></td>
+           <td><xsl:value-of select="@tiefgang"/></td>
        </tr>
        <tr>
-           <td>Fuehrerschein</td>
-           <td><xsl:value-of select="boot/@fuehrerschein"/></td>
+           <td>Führerschein</td>
+           <td><xsl:value-of select="@fuehrerschein"/></td>
        </tr>
    </table>
-   <table border="1" width="768 px">
+   
+   <br/>
+   
+   <table border="1" width="816 px">
+       <tr>
+           <th colspan="2">Besitzer</th>
+       </tr>
+       <tr>
+           <td width="125 px">Name</td>
+           <td><xsl:value-of select="besitzer/@name"/>, <xsl:value-of select="besitzer/@vorname"/></td>
+       </tr>
+       <tr>
+           <td>Straße</td>
+           <td>
+               <xsl:value-of select="besitzer/adresse/strasse"/>
+               <xsl:text> </xsl:text> 
+               <xsl:value-of select="besitzer/adresse/hausnummer"/>
+           </td>
+       </tr>
+       <tr>
+           <td>Ort</td>
+           <td><xsl:value-of select="besitzer/adresse/stadt"/></td>
+       </tr>
+       <tr>
+           <td>PLZ</td>
+           <td><xsl:value-of select="besitzer/adresse/postleitzahl"/></td>
+       </tr>
+   </table>
+ 
+   <br/> 
+ 
+   <table border="1" width="816 px">
        <tr>
            <th>Ersatzteile</th>
            <th>Zubehoer</th>
        </tr>
-       <tr>
+       <tr valign="top">
            <td>
-               <table border="0" width="370 px">
-                   <tr>
-                       <td width="65 px">Name</td>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <td>Preis</td>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <td>Vorraussetzung</td>
-                       <td></td>
-                   </tr>
+               <table width="400 px">
+                   <xsl:for-each select="ersatzteile/ersatzteil">
+                     <tr>
+                       <td width="65 px">Name: </td>
+                       <td><xsl:value-of select="@name"/></td>
+                     </tr>
+                     <tr>
+                       <td>Preis: </td>
+                       <td><xsl:value-of select="@preis"/><xsl:text> €</xsl:text></td>
+                     </tr>
+                     <tr>
+                       <xsl:if test="voraussetzung">
+                         <td>Voraussetzung: </td>
+                         <td>
+                           <xsl:for-each select="voraussetzung">
+                             <xsl:if test="@typ = 'lizenz'">
+                               <xsl:text>Lizenz: </xsl:text>
+                             </xsl:if>
+                             <xsl:if test="@typ = 'bootstyp'">
+                               <xsl:text>Bootstyp: </xsl:text>
+                             </xsl:if>
+                             <xsl:value-of select="@name"/>
+                             <br/>
+                           </xsl:for-each>
+                         </td>
+                       </xsl:if>
+                     </tr>
+                     <xsl:if test="position() != last()">
+                     <tr>
+                       <td colspan="2">
+                         <hr/>
+                       </td>
+                     </tr>
+                     </xsl:if>
+                   </xsl:for-each>  
                </table>
            </td>
            <td>
-               <table border="0" width="370 px">
-                   <tr>
-                       <td width="65 px">Name</td>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <td>Preis</td>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <td>Vorraussetzung</td>
-                       <td></td>
-                   </tr>
+               <table width="400 px">
+                   <xsl:for-each select="zubehoerteile/zubehoerteil">
+                     <tr>
+                       <td width="65 px">Name: </td>
+                       <td><xsl:value-of select="@name"/></td>
+                     </tr>
+                     <tr>
+                       <td>Preis: </td>
+                       <td><xsl:value-of select="@preis"/><xsl:text> €</xsl:text></td>
+                     </tr>
+                     <tr>
+                       <xsl:if test="voraussetzung">
+                         <td>Voraussetzung: </td>
+                         <td>
+                           <xsl:for-each select="voraussetzung">
+                             <xsl:if test="@typ = 'lizenz'">
+                               <xsl:text>Lizenz: </xsl:text>
+                             </xsl:if>
+                             <xsl:if test="@typ = 'bootstyp'">
+                               <xsl:text>Bootstyp: </xsl:text>
+                             </xsl:if>
+                             <xsl:value-of select="@name"/>
+                             <br/>
+                           </xsl:for-each>
+                         </td>
+                       </xsl:if>
+                     </tr>
+                     <xsl:if test="position() != last()">
+                     <tr>
+                       <td colspan="2">
+                         <hr/>
+                       </td>
+                     </tr>
+                     </xsl:if>
+                   </xsl:for-each>
                </table>
            </td>
        </tr>
