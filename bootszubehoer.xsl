@@ -77,6 +77,8 @@
        </tr>
    </table>
    
+   <br/>
+   
    <table border="1" width="816 px">
        <tr>
            <th colspan="2">Besitzer</th>
