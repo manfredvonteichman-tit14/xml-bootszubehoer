@@ -20,27 +20,27 @@
            <th colspan="2">Grunddaten</th>
        </tr>
        <tr>
-           <td width="125 px">Name</td>
+           <td width="125 px">Name: </td>
            <td><xsl:value-of select="@name"/></td>
        </tr>
        <tr>
-           <td>Bootstyp</td>
+           <td>Bootstyp: </td>
            <td><xsl:value-of select="@bootstyp"/></td>
        </tr>
        <tr>
-           <td>Hersteller</td>
+           <td>Hersteller: </td>
            <td><xsl:value-of select="@hersteller"/></td>
        </tr>
        <tr>
-           <td>Modell</td>
+           <td>Modell: </td>
            <td><xsl:value-of select="@modell"/></td>
        </tr>
        <tr>
-           <td>Tiefgang</td>
+           <td>Tiefgang: </td>
            <td><xsl:value-of select="@tiefgang"/></td>
        </tr>
        <tr>
-           <td>Führerschein</td>
+           <td>Führerschein: </td>
            <td><xsl:value-of select="@fuehrerschein"/></td>
        </tr>
    </table>
@@ -52,28 +52,28 @@
            <th colspan="2">Liegeplatz</th>
        	</tr>
        	<tr>
-           <td width="125 px">Hafenname</td>
-           <td><xsl:value-of select="hafen/@name"/></td>
+           <td width="125 px">Hafenname: </td>
+           <td><xsl:value-of select="liegeplatz/hafen/@name"/></td>
        </tr>
        <tr>
-           <td >Platz</td>
-           <td><xsl:value-of select="hafen/@platz"/></td>
+           <td >Platz: </td>
+           <td><xsl:value-of select="liegeplatz/hafen/platz"/></td>
        </tr>
        <tr>
-           <td>Straße</td>
+           <td>Straße: </td>
            <td>
-               <xsl:value-of select="hafen/adresse/strasse"/>
+               <xsl:value-of select="liegeplatz/hafen/adresse/strasse"/>
                <xsl:text> </xsl:text> 
-               <xsl:value-of select="hafen/adresse/hausnummer"/>
+               <xsl:value-of select="liegeplatz/hafen/adresse/hausnummer"/>
            </td>
        </tr>       
        <tr>
-           <td>Ort</td>
-           <td><xsl:value-of select="hafen/adresse/stadt"/></td>
+           <td>Ort: </td>
+           <td><xsl:value-of select="liegeplatz/hafen/adresse/stadt"/></td>
        </tr>
        <tr>
-           <td>PLZ</td>
-           <td><xsl:value-of select="hafen/adresse/postleitzahl"/></td>
+           <td>PLZ: </td>
+           <td><xsl:value-of select="liegeplatz/hafen/adresse/postleitzahl"/></td>
        </tr>
    </table>
    
@@ -84,11 +84,11 @@
            <th colspan="2">Besitzer</th>
        </tr>
        <tr>
-           <td width="125 px">Name</td>
+           <td width="125 px">Name: </td>
            <td><xsl:value-of select="besitzer/@name"/>, <xsl:value-of select="besitzer/@vorname"/></td>
        </tr>
        <tr>
-           <td>Straße</td>
+           <td>Straße: </td>
            <td>
                <xsl:value-of select="besitzer/adresse/strasse"/>
                <xsl:text> </xsl:text> 
@@ -96,11 +96,11 @@
            </td>
        </tr>
        <tr>
-           <td>Ort</td>
+           <td>Ort: </td>
            <td><xsl:value-of select="besitzer/adresse/stadt"/></td>
        </tr>
        <tr>
-           <td>PLZ</td>
+           <td>PLZ: </td>
            <td><xsl:value-of select="besitzer/adresse/postleitzahl"/></td>
        </tr>
    </table>
