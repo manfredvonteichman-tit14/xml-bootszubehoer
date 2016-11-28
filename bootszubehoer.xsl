@@ -48,6 +48,36 @@
    <br/>
    
    <table border="1" width="816 px">
+   		<tr>
+           <th colspan="2">Liegeplatz</th>
+       	</tr>
+       	<tr>
+           <td width="125 px">Hafenname</td>
+           <td><xsl:value-of select="hafen/@name"/></td>
+       </tr>
+       <tr>
+           <td >Platz</td>
+           <td><xsl:value-of select="hafen/@platz"/></td>
+       </tr>
+       <tr>
+           <td>Straße</td>
+           <td>
+               <xsl:value-of select="hafen/adresse/strasse"/>
+               <xsl:text> </xsl:text> 
+               <xsl:value-of select="hafen/adresse/hausnummer"/>
+           </td>
+       </tr>       
+       <tr>
+           <td>Ort</td>
+           <td><xsl:value-of select="hafen/adresse/stadt"/></td>
+       </tr>
+       <tr>
+           <td>PLZ</td>
+           <td><xsl:value-of select="hafen/adresse/postleitzahl"/></td>
+       </tr>
+   </table>
+   
+   <table border="1" width="816 px">
        <tr>
            <th colspan="2">Besitzer</th>
        </tr>
