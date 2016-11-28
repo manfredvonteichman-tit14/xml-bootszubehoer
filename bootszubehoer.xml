@@ -24,7 +24,7 @@
   </besitzer>
 
   <liegeplatz>
-  	<hafen>
+  	<hafen name="Westhafen">
       <adresse>
         <strasse>Kurze Strasse</strasse>
         <hausnummer>2</hausnummer>
